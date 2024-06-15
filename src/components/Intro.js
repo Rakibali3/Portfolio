@@ -1,6 +1,6 @@
 const Intro = () => {
     return (
-        <div className="flex gap-5 p-5 justify-evenly items-center  text-white text-xl flex-col md:flex-row">
+        <div className="flex gap-5 p-5 justify-evenly items-center  text-white text-xl flex-col md:flex-row dark:text-black">
             <div className="flex flex-col gap-12 lg:w-3/5 md:w-4/5 sm:w-full  ">
                 <h1 className="font-semibold text-2xl lg:text-5xl md:text-4xl  ">LET ME <span className="text-[#8A4CA8]">INTRODUCE</span> MYSELF</h1>
                 <div className="flex flex-col gap-4 p-2 text-left md:gap-8 sm:gap-8">

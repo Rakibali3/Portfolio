@@ -5,7 +5,7 @@ import Header from './components/Header';
 
 function App() {
   return (
-    <div className="App bg-[#0D2438]">
+    <div className="App  bg-[#0D2438] dark:bg-white">
            <Header />
            <Body />
            <Footer />
