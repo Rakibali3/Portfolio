@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [menu, setMenu] = useState(false);
   const [theme, setTheme] = useState(true);
@@ -11,22 +12,22 @@ const Header = () => {
   };
   return (
     <div>
-      <div className="flex justify-between items-center p-4 sticky top-0 md:justify-around lg:justify-around ">
+      <div className="flex justify-between items-center px-4 py-7 sticky top-0 md:justify-around lg:justify-around ">
         <div className="flex items-center">
-          <button className="text-white text-2xl dark:text-black">
+          <Link to={"/"} className="text-white text-2xl dark:text-black">
             Rakib Ali
-          </button>
+          </Link>
         </div>
         <div className="hidden sm:flex gap-8 text-lg text-white dark:text-black">
-          <button className="hover:text-indigo-600 hover:font-bold">
+          <Link to={"/"} className="hover:text-indigo-600 hover:font-bold">
             Home
-          </button>
-          <button className="hover:text-indigo-600 hover:font-bold">
-            About
-          </button>
-          <button className="hover:text-indigo-600 hover:font-bold">
+          </Link>
+          <Link to={"/About"} className="hover:text-indigo-600 hover:font-bold">
+            About Me
+          </Link>
+          <Link to={"/Projects"} className="hover:text-indigo-600 hover:font-bold">
             Projects
-          </button>
+          </Link>
           <button className="hover:text-indigo-600 hover:font-bold">
             Contact
           </button>
@@ -90,15 +91,15 @@ const Header = () => {
       </div>
       {menu && (
         <div className="flex flex-col gap-2 text-white text-lg m-4 p-3 dark:text-black ">
-          <button className="border-b-2 border-b-gray-400 text-left p-2">
+          <Link to={"/"} className="border-b-2 border-b-gray-400 text-left p-2">
             Home
-          </button>
-          <button className="border-b-2 border-b-gray-400 text-left p-2">
+          </Link>
+          <Link to={"/About"} className="border-b-2 border-b-gray-400 text-left p-2">
             About
-          </button>
-          <button className="border-b-2 border-b-gray-400 text-left p-2">
+          </Link>
+          <Link to={"/Projects"} className="border-b-2 border-b-gray-400 text-left p-2">
             Projects
-          </button>
+          </Link>
           <button className=" text-left p-2">Contact</button>
           <button className="bg-indigo-600 px-4 h-11 w-28  rounded-xl font-bold  items-center dark:text-white">
             Hire Me

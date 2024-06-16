@@ -11,7 +11,7 @@ const Intro = () => {
                 </div>
             </div>
             <div className="">
-                <img alt="" src="https://soumyajit.vercel.app/static/media/avatar.5852f40fbb38aa284829fa3fb7722225.svg" />
+                <img alt="" src="https://cdn.glitch.global/836ffa95-fbb3-44e9-b37a-6f1f9d594923/avatar.5852f40fbb38aa284829fa3fb7722225.svg?1718442787513" />
             </div>
         </div>
     )
