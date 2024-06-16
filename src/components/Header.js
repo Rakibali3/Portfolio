@@ -28,9 +28,9 @@ const Header = () => {
           <Link to={"/Projects"} className="hover:text-indigo-600 hover:font-bold">
             Projects
           </Link>
-          <button className="hover:text-indigo-600 hover:font-bold">
+          <Link to={"/Contact"} className="hover:text-indigo-600 hover:font-bold">
             Contact
-          </button>
+          </Link>
         </div>
 
         <div className="text-white flex gap-5 items-center ">
@@ -100,7 +100,7 @@ const Header = () => {
           <Link to={"/Projects"} className="border-b-2 border-b-gray-400 text-left p-2">
             Projects
           </Link>
-          <button className=" text-left p-2">Contact</button>
+          <Link to={"/Contact"} className=" text-left p-2">Contact</Link>
           <button className="bg-indigo-600 px-4 h-11 w-28  rounded-xl font-bold  items-center dark:text-white">
             Hire Me
           </button>

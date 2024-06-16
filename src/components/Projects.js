@@ -20,6 +20,7 @@ const Projects = () => {
       </div>
       {/* cards */}
       <div className="flex flex-wrap gap-8 items-center justify-center ">
+        {/* card1 */}
         <div className="w-[360px]  p-1  text-white border-[#8A4CA8] border-2 tex shadow-[#8A4CA8] shadow-md rounded-2xl ease-in duration-300 hover:scale-105">
           <div className="relative">
             <img
@@ -49,6 +50,7 @@ const Projects = () => {
             </p>
           </div>
         </div>
+        {/* card2 */}
         <div className="w-[360px]  p-1  text-white border-[#8A4CA8] border-2 tex shadow-[#8A4CA8] shadow-md rounded-2xl ease-in duration-300 hover:scale-105">
           <div className="relative">
             <img
@@ -61,7 +63,7 @@ const Projects = () => {
                         <i className="fa-brands fa-github fa-xl md:fa-2xl"></i>
              </button>
           </div>
-          <div className="text-left py-1 px-5 flex flex-col gap-1 w-full ">
+          <div className="text-left py-1 px-5 flex flex-col gap-2 w-full ">
             <h2 className="text-2xl font-bold dark:text-black ">
               Service Prism
             </h2>
@@ -80,6 +82,7 @@ const Projects = () => {
             </p>
           </div>
         </div>
+        {/* card3 */}
         <div className="w-[360px]  p-1  text-white border-[#8A4CA8] border-2 tex shadow-[#8A4CA8] shadow-md rounded-2xl ease-in duration-300 hover:scale-105">
           <div className="relative">
             <img
@@ -91,7 +94,7 @@ const Projects = () => {
                         <i className="fa-brands fa-github fa-xl md:fa-2xl"></i>
              </button>
           </div>
-          <div className="text-left py-1 px-5 flex flex-col gap-1 w-full">
+          <div className="text-left py-1 px-5 flex flex-col gap-2 w-full">
             <h2 className="text-2xl font-bold dark:text-black">
               {" "}
               Food Ordering Website
@@ -111,6 +114,7 @@ const Projects = () => {
             </p>
           </div>
         </div>
+        {/* card4 */}
         <div className="w-[360px]  p-1  text-white border-[#8A4CA8] border-2 tex shadow-[#8A4CA8] shadow-md rounded-2xl ease-in duration-300 hover:scale-105">
           <div className="relative">
             <img
@@ -122,7 +126,7 @@ const Projects = () => {
                         <i className="fa-brands fa-github fa-xl md:fa-2xl"></i>
              </button>
           </div>
-          <div className="text-left py-1 px-5 flex flex-col gap-1 w-full">
+          <div className="text-left py-1 px-5 flex flex-col gap-2 w-full">
             <h2 className="text-2xl font-bold dark:text-black">QA Crafter</h2>
             <p className="text-[#AAA6C3] text-left dark:text-black">
               Developed a web application that takes user input (text or PDF) to
