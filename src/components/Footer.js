@@ -4,18 +4,18 @@ const Footer = () => {
             <div className="flex flex-col gap-3">
                 <h1 className="text-center text-white text-4xl m-4 dark:text-black">Follow me</h1>
                 <div className="flex gap-4 md:gap-8 items-center justify-center flex-wrap ">
-                    <button className="bg-[#1E3851] p-2 md:p-4 rounded-lg text-white hover:text-[#8A4CA8]">
+                    <a href="http://linkedin.com/in/mohammad-raquib-ali-94160823b" target="_blank" rel="noreferrer" className="bg-[#1E3851] p-2 md:p-4 rounded-lg text-white hover:text-[#8A4CA8]">
                         <i className="fa-brands fa-linkedin-in fa-xl md:fa-2xl"></i>
-                    </button>
-                    <button className="bg-[#1E3851] p-2 md:p-4 rounded-lg text-white hover:text-[#8A4CA8]">
+                    </a>
+                    <a href="https://github.com/Rakibali3" target="_blank" rel="noreferrer" className="bg-[#1E3851] p-2 md:p-4 rounded-lg text-white hover:text-[#8A4CA8]">
                         <i className="fa-brands fa-github fa-xl md:fa-2xl"></i>
-                    </button>
-                    <button className="bg-[#1E3851] p-2 md:p-4 rounded-lg text-white hover:text-[#8A4CA8]">
+                    </a>
+                    <a href="https://www.instagram.com/rakib_mohammad13/?hl=en" target="_blank" rel="noreferrer" className="bg-[#1E3851] p-2 md:p-4 rounded-lg text-white hover:text-[#8A4CA8]">
                         <i className="fa-brands fa-instagram fa-xl md:fa-2xl"></i>
-                    </button>
-                    <button className="bg-[#1E3851] p-2 md:p-4 rounded-lg text-white hover:text-[#8A4CA8]">
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCWvEvpWJ2y_suU3V6GkS1EQ" target="_blank" rel="noreferrer" className="bg-[#1E3851] p-2 md:p-4 rounded-lg text-white hover:text-[#8A4CA8]">
                         <i className="fa-brands fa-youtube fa-xl md:fa-2xl"></i>
-                    </button>
+                    </a>
                     <button className="bg-[#1E3851] p-2 md:p-4 rounded-lg text-white hover:text-[#8A4CA8] ">
                         <i className="fa-brands fa-twitter fa-xl md:fa-2xl"></i>
                     </button>

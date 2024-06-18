@@ -28,9 +28,9 @@ const Projects = () => {
               alt=""
               className=" rounded-3xl w-[97%] h-[250px]  m-auto p-3 "
             />
-            <button className="bg-[#1E3851] p-2 md:p-3 rounded-full text-white  absolute bottom-44 right-6 border-2 tex shadow-[#8A4CA8] shadow-md">
+            <a href="https://github.com/Rakibali3/Event-Management-System" target="_blank" rel="noreferrer" className="bg-[#1E3851] p-2 md:p-3 rounded-full text-white  absolute bottom-44 right-6 border-2 tex shadow-[#8A4CA8] shadow-md">
                         <i className="fa-brands fa-github fa-xl md:fa-2xl"></i>
-             </button>
+             </a>
           </div>
           <div className="text-left py-2 px-5 flex flex-col gap-2 w-full">
             <h2 className="text-2xl font-bold dark:text-black">
@@ -59,9 +59,9 @@ const Projects = () => {
               className=" rounded-3xl w-[97%] h-[250px]  m-auto p-3 "
             />
             
-             <button className="bg-[#1E3851] p-2 md:p-3 rounded-full text-white absolute bottom-44 right-6 border-2 tex shadow-[#8A4CA8] shadow-md">
+             <a href="https://github.com/Rakibali3/service-prism" target="_blank" rel="noreferrer" className="bg-[#1E3851] p-2 md:p-3 rounded-full text-white absolute bottom-44 right-6 border-2 tex shadow-[#8A4CA8] shadow-md">
                         <i className="fa-brands fa-github fa-xl md:fa-2xl"></i>
-             </button>
+             </a>
           </div>
           <div className="text-left py-1 px-5 flex flex-col gap-2 w-full ">
             <h2 className="text-2xl font-bold dark:text-black ">
@@ -90,9 +90,9 @@ const Projects = () => {
               alt=""
               className=" rounded-3xl w-[97%] h-[250px]  m-auto p-3 "
             />
-             <button className="bg-[#1E3851] p-2 md:p-3 rounded-full text-white  absolute bottom-44 right-6 border-2 tex shadow-[#8A4CA8] shadow-md">
+             <a href="https://github.com/Rakibali3/React" target="_blank" rel="noreferrer" className="bg-[#1E3851] p-2 md:p-3 rounded-full text-white  absolute bottom-44 right-6 border-2 tex shadow-[#8A4CA8] shadow-md">
                         <i className="fa-brands fa-github fa-xl md:fa-2xl"></i>
-             </button>
+             </a>
           </div>
           <div className="text-left py-1 px-5 flex flex-col gap-2 w-full">
             <h2 className="text-2xl font-bold dark:text-black">
@@ -122,9 +122,9 @@ const Projects = () => {
               alt=""
               className=" rounded-3xl w-[97%] h-[250px]  m-auto p-3 "
             />
-             <button className="bg-[#1E3851] p-2 md:p-3 rounded-full text-white  absolute bottom-44 right-6   border-2 tex shadow-[#8A4CA8] shadow-md">
+             <a href="https://github.com/Rakibali3" target="_blank" rel="noreferrer" className="bg-[#1E3851] p-2 md:p-3 rounded-full text-white  absolute bottom-44 right-6   border-2 tex shadow-[#8A4CA8] shadow-md">
                         <i className="fa-brands fa-github fa-xl md:fa-2xl"></i>
-             </button>
+             </a>
           </div>
           <div className="text-left py-1 px-5 flex flex-col gap-2 w-full">
             <h2 className="text-2xl font-bold dark:text-black">QA Crafter</h2>
