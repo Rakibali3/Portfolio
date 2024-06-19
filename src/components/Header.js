@@ -36,7 +36,7 @@ const Header = () => {
             Rakib Ali
           </Link>
         </div>
-        <div className="hidden sm:flex gap-8 text-lg text-white dark:text-black">
+        <div className="hidden sm:flex lg:gap-8 md:gap-5 sm:gap-4 text-lg text-white dark:text-black">
           <Link to={"/"} className="hover:text-indigo-600 hover:font-bold">
             Home
           </Link>
@@ -50,11 +50,18 @@ const Header = () => {
             Projects
           </Link>
           <Link
+            to={"/Education"}
+            className="hover:text-indigo-600 hover:font-bold"
+          >
+            Education
+          </Link>
+          <Link
             to={"/Contact"}
             className="hover:text-indigo-600 hover:font-bold"
           >
             Contact
           </Link>
+          
         </div>
 
         <div className="text-white flex gap-5 items-center ">
@@ -132,6 +139,12 @@ const Header = () => {
             className="border-b-2 border-b-gray-400 text-left p-2"
           >
             Projects
+          </Link>
+          <Link
+            to={"/Education"}
+            className="border-b-2 border-b-gray-400 text-left p-2"
+          >
+            Education
           </Link>
           <Link to={"/Contact"} className=" text-left p-2">
             Contact

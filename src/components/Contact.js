@@ -3,7 +3,7 @@ import React from 'react';
 const Contact = () => {
     return (
         <div className='flex flex-col-reverse lg:flex-row p-3 justify-center lg:mt-28 md:m-10 sm:m-0 md:flex-col-reverse sm:flex-col-reverse md:justify-center gap-8 '>
-            <div className='w-full lg:w-auto flex md:justify-center '>
+            <div className='w-full lg:w-auto flex md:justify-center sm:justify-center  '>
                 <form className='bg-[#100D25] dark:bg-white dark:text-black flex flex-col gap-8 text-white p-8 rounded-2xl w-full lg:w-[520px] md:w-[520px] sm:w-[90%] dark:border-2 dark:border-black '>
                     <div className='flex flex-col gap-3'>
                         <p className='text-[#AAA6C3] text-lg text-left dark:font-bold'>GET IN TOUCH</p>
@@ -21,10 +21,10 @@ const Contact = () => {
                         <label htmlFor="message" className='text-lg'>Your Message</label>
                         <textarea id="message" rows={7} placeholder='What you want to say?' required className='bg-[#151030]  p-4 rounded-lg focus:outline-none focus:border-none dark:bg-slate-100' />
                     </div>
-                    <button type='submit' className='bg-[#151030] dark:bg-black text-white dark:text-white font-bold text-lg p-3 w-28 rounded-xl shadow-xl'>Send</button>
+                    <button type='submit' className='bg-[#151030] dark:bg-black text-white dark:text-white font-bold text-lg p-3 w-28 rounded-xl shadow-sm shadow-slate-400'>Send</button>
                 </form>
             </div>
-            <div className='flex flex-col gap-8 p-5 text-left text-white w-full lg:w-auto lg:items-start md:items-center dark:text-black'>
+            <div className='flex flex-col gap-8 p-5 text-left text-white w-full lg:w-auto lg:items-start md:items-center sm:items-center dark:text-black'>
                 <h1 className=' font-bold text-2xl'>Contact Details</h1>
                 <div className='flex flex-col gap-5 text-xl'>
                     <div className='flex gap-3 items-center'>

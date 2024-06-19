@@ -43,7 +43,7 @@ const Modal = ({ toggleModal }) => {
                 </div>
                 <button
                     type='submit'
-                    className='bg-[#151030] dark:bg-black text-white dark:text-white font-bold text-lg p-3 w-full rounded-xl shadow-xl'
+                    className='bg-[#151030] dark:bg-black text-white dark:text-white font-bold text-lg p-3 w-full rounded-xl shadow-sm shadow-slate-400'
                 >
                     Send
                 </button>
