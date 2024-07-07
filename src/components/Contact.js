@@ -1,9 +1,18 @@
-import React from "react";
+import React ,{useEffect}from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Contact = () => {
+  
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
   return (
     <div className="flex flex-col-reverse lg:flex-row p-3 justify-center lg:mt-28 md:m-10 sm:m-0 md:flex-col-reverse sm:flex-col-reverse md:justify-center gap-8 ">
       <div className="w-full lg:w-auto flex md:justify-center sm:justify-center  ">
       <form
+          data-aos="fade-right" 
           action="https://formspree.io/f/mzzppewr"
           method="POST"
           className="bg-[#100D25] dark:bg-white dark:text-black flex flex-col gap-8 text-white p-8 rounded-2xl w-full lg:w-[520px] md:w-[520px] sm:w-[90%] dark:border-2 dark:border-black "
@@ -63,7 +72,7 @@ const Contact = () => {
           </button>
         </form>
       </div>
-      <div className="flex flex-col gap-8 p-5 text-left text-white w-full lg:w-auto lg:items-start md:items-center sm:items-center dark:text-black">
+      <div data-aos="fade-left" className="flex flex-col gap-8 p-5 text-left text-white w-full lg:w-auto lg:items-start md:items-center sm:items-center dark:text-black">
         <h1 className=" font-bold text-2xl">Contact Details</h1>
         <div className="flex flex-col gap-5 text-xl">
           <div className="flex gap-3 items-center">

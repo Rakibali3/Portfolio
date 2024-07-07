@@ -39,7 +39,7 @@ const Modal = ({ toggleModal }) => {
             name="project_type"
             className="bg-[#151030] dark:bg-slate-100 p-3 rounded-lg focus:outline-none focus:border-none"
           >
-            <option value="Frontend">Frontend</option>
+            <option value="Frontend">Frontend </option>
             <option value="Backend">Backend</option>
             <option value="Full Stack">Full Stack</option>
           </select>

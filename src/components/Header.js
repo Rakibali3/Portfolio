@@ -6,31 +6,52 @@ const Header = () => {
   const [menu, setMenu] = useState(false);
   const [theme, setTheme] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const showMenu = () => {
-    setMenu(menu ? false : true);
+    setMenu((prevMenu) => !prevMenu);
   };
 
   const toggleTheme = () => {
-    setTheme(theme ? false : true);
+    setTheme((prevTheme) => !prevTheme);
     document.body.classList.toggle("dark");
   };
 
   const toggleModal = () => {
-    setIsModalOpen(!isModalOpen);
+    setIsModalOpen((prevIsModalOpen) => !prevIsModalOpen);
   };
 
   useEffect(() => {
     if (isModalOpen) {
       document.body.classList.add("overflow-y-hidden");
-    }else{
+    } else {
       document.body.classList.remove("overflow-y-hidden");
     }
   }, [isModalOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div>
-      <div className="flex justify-between items-center px-4 py-7 sticky top-0 md:justify-around lg:justify-around ">
+    <div
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        isScrolled ? "backdrop-blur-md" : ""
+      }`}
+    >
+      <div className="flex justify-between items-center px-4 py-6 md:justify-around lg:justify-around">
         <div className="flex items-center">
           <Link to={"/"} className="text-white text-2xl dark:text-black">
             Rakib Ali
@@ -40,31 +61,33 @@ const Header = () => {
           <Link to={"/"} className="hover:text-indigo-600 hover:font-semibold">
             Home
           </Link>
-          <Link to={"/About"} className="hover:text-indigo-600 hover:semifont-bold">
+          <Link
+            to={"/About"}
+            className="hover:text-indigo-600 hover:font-semibold"
+          >
             About Me
           </Link>
           <Link
             to={"/Projects"}
-            className="hover:text-indigo-600 hover:semifont-bold"
+            className="hover:text-indigo-600 hover:font-semibold"
           >
             Projects
           </Link>
           <Link
             to={"/Education"}
-            className="hover:text-indigo-600 hover:semifont-bold"
+            className="hover:text-indigo-600 hover:font-semibold"
           >
             Education
           </Link>
           <Link
             to={"/Contact"}
-            className="hover:text-indigo-600 hover:semifont-bold"
+            className="hover:text-indigo-600 hover:font-semibold"
           >
             Contact
           </Link>
-          
         </div>
 
-        <div className="text-white flex gap-5 items-center ">
+        <div className="text-white flex gap-5 items-center">
           <button
             className="hidden md:flex items-center bg-indigo-500 hover:bg-indigo-600 px-4 h-11 rounded-xl font-bold"
             onClick={toggleModal}
@@ -84,18 +107,23 @@ const Header = () => {
               </svg>
             ) : (
               <svg
+                stroke="currentColor"
+                fill="none"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl"
+                height="1em"
+                width="1em"
                 xmlns="http://www.w3.org/2000/svg"
-                height="24px"
-                viewBox="0 -960 960 960"
-                width="24px"
-                fill="#e8eaed"
               >
-                <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z" />
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
               </svg>
             )}
           </button>
         </div>
-        <div className="flex sm:hidden ">
+        <div className="flex sm:hidden">
           {menu ? (
             <button onClick={showMenu}>
               <svg
@@ -124,32 +152,42 @@ const Header = () => {
         </div>
       </div>
       {menu && (
-        <div className="flex flex-col gap-2 text-white text-lg m-4 p-3 dark:text-black ">
-          <Link to={"/"} className="border-b-2 border-b-gray-400 text-left p-2">
+        <div className="flex flex-col gap-2 text-white text-lg m-4 p-3 dark:text-black">
+          <Link
+            to={"/"}
+            className="border-b-2 border-b-gray-400 text-left p-2"
+            onClick={showMenu}
+          >
             Home
           </Link>
           <Link
             to={"/About"}
             className="border-b-2 border-b-gray-400 text-left p-2"
+            onClick={showMenu}
           >
             About
           </Link>
           <Link
             to={"/Projects"}
             className="border-b-2 border-b-gray-400 text-left p-2"
+            onClick={showMenu}
           >
             Projects
           </Link>
           <Link
             to={"/Education"}
             className="border-b-2 border-b-gray-400 text-left p-2"
+            onClick={showMenu}
           >
             Education
           </Link>
-          <Link to={"/Contact"} className=" text-left p-2">
+          <Link to={"/Contact"} className="text-left p-2" onClick={showMenu}>
             Contact
           </Link>
-          <button className="bg-indigo-600 px-4 h-11 w-28  rounded-xl font-bold  items-center dark:text-white" onClick={toggleModal}>
+          <button
+            className="bg-indigo-600 px-4 h-11 w-28 rounded-xl font-bold items-center dark:text-white"
+            onClick={toggleModal}
+          >
             Hire Me
           </button>
         </div>
@@ -158,4 +196,5 @@ const Header = () => {
     </div>
   );
 };
+
 export default Header;

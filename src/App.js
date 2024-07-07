@@ -11,7 +11,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <BrowserRouter>
-      <div className="App  bg-[#0D2438] dark:bg-white">
+       <div className="App bg-[#0D2438] dark:bg-white cursor-gradient">
         <Header />
         <Routes>
           <Route path="/" element={<Body />} />

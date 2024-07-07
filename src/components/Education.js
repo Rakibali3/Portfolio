@@ -1,10 +1,21 @@
 // src/Education.js
 
-import React from 'react';
+import React ,{useEffect}from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGraduationCap} from '@fortawesome/free-solid-svg-icons';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Education = () => {
+
+  
+  useEffect(() => {
+    AOS.init({
+      duration: 1500,
+    });
+  }, []);
+
+
   const educationData = [
     {
       degree: "Bachelor's Degree",
@@ -37,14 +48,14 @@ const Education = () => {
           <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gray-300 dark:bg-black h-full"></div>
           {educationData.map((edu, index) => (
             <div key={index} className="mb-8 flex justify-between items-center ">
-              <div className="hidden sm:block sm:w-1/2 sm:pr-8">
+              <div data-aos="fade-right"  className="hidden sm:block sm:w-1/2 sm:pr-8">
                 <div className="text-right">
                   <p className="text-green-600 font-semibold">{edu.year}</p>
                   <h3 className="text-2xl font-bold text-white dark:text-black">{edu.degree}</h3>
                   <p className="text-[#A09CBE]">{edu.university}</p>
                 </div>
               </div>
-              <div className="relative w-full sm:w-1/2">
+              <div data-aos="fade-up" className="relative w-full sm:w-1/2">
                 <div className="absolute left-1/2 z-50 transform -translate-x-1/2 w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
                   <FontAwesomeIcon icon={faGraduationCap} className="text-white" />
                 </div>
@@ -57,7 +68,7 @@ const Education = () => {
                   <p className="text-white dark:text-black">{edu.description}</p>
                 </div>
               </div>
-              <div className="hidden sm:block sm:w-1/2 sm:pl-8">
+              <div data-aos="fade-left"  className="hidden sm:block sm:w-1/2 sm:pl-8">
                 <div></div>
               </div>
             </div>
