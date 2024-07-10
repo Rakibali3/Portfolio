@@ -2,11 +2,11 @@ import React from "react";
 
 const Modal = ({ toggleModal }) => {
   return (
-    <div className="flex justify-center items-center w-full h-full fixed top-0 left-0 bg-black bg-opacity-50 z-50">
+    <div className=" w-full h-full fixed top-0 left-0 p-10  bg-opacity-50 z-50">
       <form
         action="https://formspree.io/f/mgvwwaql"
         method="POST"
-        className="bg-[#100D25] dark:bg-white dark:text-black flex flex-col gap-6 text-white p-6 w-[450px] max-w-lg mx-auto rounded-xl"
+        className="bg-[#100D25] dark:bg-white dark:text-black flex flex-col gap-6 text-white p-6 w-[450px] max-w-lg mx-auto rounded-xl shadow-white shadow-md dark:shadow-black"
       >
         <div className="flex justify-between p-3 border-b-2 border-b-slate-500">
           <p className="text-white dark:text-black text-xl">

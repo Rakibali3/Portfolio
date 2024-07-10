@@ -3,13 +3,9 @@ import Skillset from "./Skillset";
 
 const AboutMe = () => {
   return (
-    <div style={{ overflow: "hidden" }}>
-      <div>
-        <AboutInfo />
-      </div>
-      <div>
-        <Skillset />
-      </div>
+    <div className="w-full">
+      <AboutInfo />
+      <Skillset />
     </div>
   );
 };

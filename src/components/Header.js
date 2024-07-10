@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import Modal from "./Modal";
 
-const Header = () => {
+const Header = ({ scrollToSection, refs }) => {
   const [menu, setMenu] = useState(false);
   const [theme, setTheme] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,60 +30,43 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   return (
-    <div
+    <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled ? "backdrop-blur-md" : ""
       }`}
     >
       <div className="flex justify-between items-center px-4 py-6 md:justify-around lg:justify-around">
         <div className="flex items-center">
-          <Link to={"/"} className="text-white text-2xl dark:text-black">
+          <button onClick={() => scrollToSection(refs.homeRef)} className="text-white text-2xl dark:text-black">
             Rakib Ali
-          </Link>
+          </button>
         </div>
         <div className="hidden sm:flex lg:gap-8 md:gap-5 sm:gap-4 text-lg text-white dark:text-black">
-          <Link to={"/"} className="hover:text-indigo-600 hover:font-semibold">
+          <button onClick={() => scrollToSection(refs.homeRef)} className="hover:text-indigo-600 hover:font-semibold">
             Home
-          </Link>
-          <Link
-            to={"/About"}
-            className="hover:text-indigo-600 hover:font-semibold"
-          >
+          </button>
+          <button onClick={() => scrollToSection(refs.aboutRef)} className="hover:text-indigo-600 hover:font-semibold">
             About Me
-          </Link>
-          <Link
-            to={"/Projects"}
-            className="hover:text-indigo-600 hover:font-semibold"
-          >
+          </button>
+          <button onClick={() => scrollToSection(refs.projectsRef)} className="hover:text-indigo-600 hover:font-semibold">
             Projects
-          </Link>
-          <Link
-            to={"/Education"}
-            className="hover:text-indigo-600 hover:font-semibold"
-          >
+          </button>
+          <button onClick={() => scrollToSection(refs.educationRef)} className="hover:text-indigo-600 hover:font-semibold">
             Education
-          </Link>
-          <Link
-            to={"/Contact"}
-            className="hover:text-indigo-600 hover:font-semibold"
-          >
+          </button>
+          <button onClick={() => scrollToSection(refs.contactRef)} className="hover:text-indigo-600 hover:font-semibold">
             Contact
-          </Link>
+          </button>
         </div>
 
         <div className="text-white flex gap-5 items-center">
@@ -153,37 +135,36 @@ const Header = () => {
       </div>
       {menu && (
         <div className="flex flex-col gap-2 text-white text-lg m-4 p-3 dark:text-black">
-          <Link
-            to={"/"}
+          <button
+            onClick={() => { showMenu(); scrollToSection(refs.homeRef); }}
             className="border-b-2 border-b-gray-400 text-left p-2"
-            onClick={showMenu}
           >
             Home
-          </Link>
-          <Link
-            to={"/About"}
+          </button>
+          <button
+            onClick={() => { showMenu(); scrollToSection(refs.aboutRef); }}
             className="border-b-2 border-b-gray-400 text-left p-2"
-            onClick={showMenu}
           >
             About
-          </Link>
-          <Link
-            to={"/Projects"}
+          </button>
+          <button
+            onClick={() => { showMenu(); scrollToSection(refs.projectsRef); }}
             className="border-b-2 border-b-gray-400 text-left p-2"
-            onClick={showMenu}
           >
             Projects
-          </Link>
-          <Link
-            to={"/Education"}
+          </button>
+          <button
+            onClick={() => { showMenu(); scrollToSection(refs.educationRef); }}
             className="border-b-2 border-b-gray-400 text-left p-2"
-            onClick={showMenu}
           >
             Education
-          </Link>
-          <Link to={"/Contact"} className="text-left p-2" onClick={showMenu}>
+          </button>
+          <button
+            onClick={() => { showMenu(); scrollToSection(refs.contactRef); }}
+            className="text-left p-2"
+          >
             Contact
-          </Link>
+          </button>
           <button
             className="bg-indigo-600 px-4 h-11 w-28 rounded-xl font-bold items-center dark:text-white"
             onClick={toggleModal}
@@ -193,7 +174,7 @@ const Header = () => {
         </div>
       )}
       {isModalOpen && <Modal toggleModal={toggleModal} />}
-    </div>
+    </header>
   );
 };
 
