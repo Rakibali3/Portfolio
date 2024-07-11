@@ -5,19 +5,18 @@ const Header = ({ scrollToSection, refs }) => {
   const [menu, setMenu] = useState(false);
   const [theme, setTheme] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   const showMenu = () => {
-    setMenu((prevMenu) => !prevMenu);
+    setMenu(!menu);
   };
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => !prevTheme);
+    setTheme(!theme);
     document.body.classList.toggle("dark");
   };
 
   const toggleModal = () => {
-    setIsModalOpen((prevIsModalOpen) => !prevIsModalOpen);
+    setIsModalOpen(!isModalOpen);
   };
 
   useEffect(() => {
@@ -28,50 +27,53 @@ const Header = ({ scrollToSection, refs }) => {
     }
   }, [isModalOpen]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
-    <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "backdrop-blur-md" : ""
-      }`}
-    >
-      <div className="flex justify-between items-center px-4 py-6 md:justify-around lg:justify-around">
+    <header className="fixed top-0 left-0 w-full bg-[#0D2438] dark:bg-white z-50">
+      <div className="flex justify-between items-center px-4 py-7 sticky top-0 md:justify-around lg:justify-around">
         <div className="flex items-center">
-          <button onClick={() => scrollToSection(refs.homeRef)} className="text-white text-2xl dark:text-black">
+          <button
+            onClick={() => scrollToSection(refs.homeRef)}
+            className="text-white text-2xl dark:text-black"
+          >
             Rakib Ali
           </button>
         </div>
         <div className="hidden sm:flex lg:gap-8 md:gap-5 sm:gap-4 text-lg text-white dark:text-black">
-          <button onClick={() => scrollToSection(refs.homeRef)} className="hover:text-indigo-600 hover:font-semibold">
+          <button
+            onClick={() => scrollToSection(refs.homeRef)}
+            className="hover:text-indigo-600 hover:font-semibold"
+          >
             Home
           </button>
-          <button onClick={() => scrollToSection(refs.aboutRef)} className="hover:text-indigo-600 hover:font-semibold">
+          <button
+            onClick={() => scrollToSection(refs.aboutRef)}
+            className="hover:text-indigo-600 hover:font-semibold"
+          >
             About Me
           </button>
-          <button onClick={() => scrollToSection(refs.projectsRef)} className="hover:text-indigo-600 hover:font-semibold">
+          <button
+            onClick={() => scrollToSection(refs.projectsRef)}
+            className="hover:text-indigo-600 hover:font-semibold"
+          >
             Projects
           </button>
-          <button onClick={() => scrollToSection(refs.educationRef)} className="hover:text-indigo-600 hover:font-semibold">
+          <button
+            onClick={() => scrollToSection(refs.educationRef)}
+            className="hover:text-indigo-600 hover:font-semibold"
+          >
             Education
           </button>
-          <button onClick={() => scrollToSection(refs.contactRef)} className="hover:text-indigo-600 hover:font-semibold">
+          <button
+            onClick={() => scrollToSection(refs.contactRef)}
+            className="hover:text-indigo-600 hover:font-semibold"
+          >
             Contact
           </button>
         </div>
 
         <div className="text-white flex gap-5 items-center">
           <button
-            className="hidden md:flex items-center bg-indigo-500 hover:bg-indigo-600 px-4 h-11 rounded-xl font-bold"
+            className="max-md:hidden max-sm:hidden md:flex items-center bg-indigo-500 hover:bg-indigo-600 px-4 h-11 rounded-xl font-bold"
             onClick={toggleModal}
           >
             Hire Me
@@ -91,11 +93,11 @@ const Header = ({ scrollToSection, refs }) => {
               <svg
                 stroke="currentColor"
                 fill="none"
-                stroke-width="2"
+                strokeWidth="2"
                 viewBox="0 0 24 24"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                class="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="text-ternary-dark hover:text-gray-400 dark:text-ternary-light dark:hover:text-primary-light text-xl"
                 height="1em"
                 width="1em"
                 xmlns="http://www.w3.org/2000/svg"
@@ -136,31 +138,46 @@ const Header = ({ scrollToSection, refs }) => {
       {menu && (
         <div className="flex flex-col gap-2 text-white text-lg m-4 p-3 dark:text-black">
           <button
-            onClick={() => { showMenu(); scrollToSection(refs.homeRef); }}
+            onClick={() => {
+              showMenu();
+              scrollToSection(refs.homeRef);
+            }}
             className="border-b-2 border-b-gray-400 text-left p-2"
           >
             Home
           </button>
           <button
-            onClick={() => { showMenu(); scrollToSection(refs.aboutRef); }}
+            onClick={() => {
+              showMenu();
+              scrollToSection(refs.aboutRef);
+            }}
             className="border-b-2 border-b-gray-400 text-left p-2"
           >
             About
           </button>
           <button
-            onClick={() => { showMenu(); scrollToSection(refs.projectsRef); }}
+            onClick={() => {
+              showMenu();
+              scrollToSection(refs.projectsRef);
+            }}
             className="border-b-2 border-b-gray-400 text-left p-2"
           >
             Projects
           </button>
           <button
-            onClick={() => { showMenu(); scrollToSection(refs.educationRef); }}
+            onClick={() => {
+              showMenu();
+              scrollToSection(refs.educationRef);
+            }}
             className="border-b-2 border-b-gray-400 text-left p-2"
           >
             Education
           </button>
           <button
-            onClick={() => { showMenu(); scrollToSection(refs.contactRef); }}
+            onClick={() => {
+              showMenu();
+              scrollToSection(refs.contactRef);
+            }}
             className="text-left p-2"
           >
             Contact
@@ -177,5 +194,4 @@ const Header = ({ scrollToSection, refs }) => {
     </header>
   );
 };
-
 export default Header;

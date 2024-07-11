@@ -16,7 +16,9 @@ function App() {
   const contactRef = useRef(null);
 
   const scrollToSection = (ref) => {
-    const headerHeight = document.querySelector('header').offsetHeight;
+    const headerElement = document.querySelector('header');
+    const headerHeight = headerElement ? headerElement.offsetHeight : 0;
+    
     window.scrollTo({
       top: ref.current.offsetTop - headerHeight,
       behavior: 'smooth',
@@ -24,8 +26,10 @@ function App() {
   };
 
   return (
-    <div className="App bg-[#0D2438] dark:bg-white cursor-gradient  ">
-      <Header scrollToSection={scrollToSection} refs={{ homeRef, aboutRef, projectsRef, educationRef, contactRef }} />
+    <div className="App bg-[#0D2438] dark:bg-white cursor-gradient">
+      <header>
+        <Header scrollToSection={scrollToSection} refs={{ homeRef, aboutRef, projectsRef, educationRef, contactRef }} />
+      </header>
       <div ref={homeRef}><Body /></div>
       <div ref={aboutRef}><AboutMe /></div>
       <div ref={projectsRef}><Projects /></div>
